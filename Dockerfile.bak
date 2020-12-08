@@ -1,0 +1,8 @@
+FROM nginx:1.19.5
+LABEL description="version nginx avec vim installé"
+LABEL version="3.0"
+LABEL maintainer="hervebera"
+ENV MYSQL_USER="root"
+RUN apt-get update && apt-get install -y vim
+WORKDIR /usr/share/nginx/html
+RUN mkdir mon-site && echo "Coucou" >> mon-site/index.html 
